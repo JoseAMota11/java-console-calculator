@@ -8,12 +8,7 @@ public class AskToTheUser {
   Scanner operationType = new Scanner(System.in);
 
   void makeCalculation() {
-    System.out.println("What kind of operation do you want to make? ");
-    System.out.println("1. Sum");
-    System.out.println("2. Subtraction");
-    System.out.println("3. Multiply");
-    System.out.println("4. Division");
-    System.out.print("Option: ");
+    ConsolePanel.ShowPanel();
     String op = operationType.next();
 
     System.out.print("Type the first number: ");
@@ -24,20 +19,11 @@ public class AskToTheUser {
     System.out.print("Result: ");
 
     switch (op) {
-      case "1":
-        Calculate.Add(num1, num2);
-        break;
-      case "2":
-        Calculate.Sub(num1, num2);
-        break;
-      case "3":
-        Calculate.Mul(num1, num2);
-        break;
-      case "4":
-        Calculate.Div(num1, num2);
-        break;
-      default:
-        System.out.println("Invalid option");
+      case "1" -> Calculate.Add(num1, num2);
+      case "2" -> Calculate.Sub(num1, num2);
+      case "3" -> Calculate.Mul(num1, num2);
+      case "4" -> Calculate.Div(num1, num2);
+      default -> System.out.println("Invalid option");
     }
   }
 }
